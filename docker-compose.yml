@@ -1,14 +1,41 @@
 version: '2'
 
 services:
-  janus-gateway:
-    image: linagora/docker-janus-gateway
+  janus:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: brnsouza/janus-gateway
+    network_mode: "host"
+    restart: always
     ports:
-      - "80:80"
       - "7088:7088"
       - "8088:8088"
       - "8188:8188"
       - "8089:8089"
       - "10000-10200:10000-10200/udp"
     environment:
-      - DOCKER_IP=${DOCKER_IP}
+      - DOCKER_IP
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+  nginx:
+    image: nginx:alpine
+    restart: always
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - janus
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./demos:/demos
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+  certbot:
+    image: certbot/certbot
+    restart: always
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
