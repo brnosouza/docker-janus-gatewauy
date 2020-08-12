@@ -2,13 +2,16 @@ version: '2'
 
 services:
   janus:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: brnsouza/janus-gateway
+    #    build:
+    #      context: .
+    #      dockerfile: Dockerfile
+    #    image: brnsouza/janus-gateway
+    image: gjovanov/janus-full
     network_mode: "host"
-    restart: always
+    restart: on-failure
     ports:
+      - "80:80"
+      - "443:443"
       - "7088:7088"
       - "8088:8088"
       - "8188:8188"
@@ -17,14 +20,17 @@ services:
     environment:
       - DOCKER_IP
     volumes:
+      - ./data/certbot/conf/live/janus.procondutor.com.br/fullchain.pem:/usr/local/nginx/server.crt \
+      - ./data/certbot/conf/live/janus.procondutor.com.br/privkey.pem:/usr/local/nginx/server.key \
+      - ./log_janus:/app/log \
       - ./data/certbot/conf:/etc/letsencrypt
   nginx:
     image: nginx:alpine
     restart: always
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-    ports:
-      - "80:80"
-      - "443:443"
+    #    ports:
+    #      - "80:80"
+    #      - "443:443"
     depends_on:
       - janus
     volumes:
