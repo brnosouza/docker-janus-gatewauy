@@ -81,7 +81,7 @@ RUN cd ~ \
     && make configs
 
 COPY ./certs /opt/janus/share/janus
-COPY conf/*.cfg /opt/janus/etc/janus/
+COPY conf/*.jcfg /opt/janus/etc/janus/
 
 EXPOSE 7088 8088 8188 8089
 EXPOSE 10000-10200/udp
