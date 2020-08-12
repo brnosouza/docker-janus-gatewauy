@@ -43,16 +43,16 @@
 // the whole session.
 //
 var server = null;
-// if(window.location.protocol === 'http:')
-// 	server = "http://" + window.location.hostname + ":8088/janus";
-// else
-// 	server = "https://" + window.location.hostname + ":8089/janus";
-//
 if(window.location.protocol === 'http:')
-	server = "http://" + window.location.hostname + "/janus_http";
+	server = [
+		"ws://" + window.location.hostname + ":8188/janus",
+		"http://" + window.location.hostname + ":8088/janus"
+	];
 else
-	server = "https://" + window.location.hostname + "/janus_http";
-
+	server = [
+		"wss://" + window.location.hostname + ":8989/janus",
+		"https://" + window.location.hostname + ":8089/janus"
+	];
 
 var janus = null;
 var echotest = null;

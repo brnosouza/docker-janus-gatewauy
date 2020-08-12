@@ -8,12 +8,18 @@ services:
     image: brnsouza/janus-gateway
     restart: always
     ports:
+      # TODO: MAP PORTS
       - "7088:7088"
+      - "7188:7188"
+      - "7889:7889"
+      - "7989:7989"
       - "8088:8088"
-      - "8188:8188"
       - "8089:8089"
+      - "8188:8188"
+      - "8989:8989"
       - "10000-10200:10000-10200/udp"
     volumes:
+      - ./conf/:/opt/janus/etc/janus/
       - ./data/certbot/conf:/etc/letsencrypt
   nginx:
     image: nginx:alpine

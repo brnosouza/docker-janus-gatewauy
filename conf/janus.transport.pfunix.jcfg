@@ -3,7 +3,7 @@
 # server. Notice that by default the interface is disabled, as you need
 # to specify the path(s) to bind to for the API(s).
 general: {
-	enabled = yes					# Whether to enable the Unix Sockets interface
+	enabled = true					# Whether to enable the Unix Sockets interface
 									# for Janus API clients
 	#events = true					# Whether to notify event handlers about transport events (default=true)
 	json = "indented"				# Whether the JSON messages should be indented (default),
@@ -18,6 +18,6 @@ general: {
 admin: {
 	admin_enabled = false					# Whether to enable the Unix Sockets interface
 											# for Admin API clients
-	admin_path = /tmp/ux-janusadmin	# Path to bind to (Admin API)
+	#admin_path = "/tmp/ux-janusadmin"	# Path to bind to (Admin API)
 	#admin_type = "SOCK_SEQPACKET"			# SOCK_SEQPACKET (default) or SOCK_DGRAM?
 }
