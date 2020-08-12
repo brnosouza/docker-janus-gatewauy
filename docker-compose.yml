@@ -6,16 +6,20 @@ services:
     #      context: .
     #      dockerfile: Dockerfile
     #    image: brnsouza/janus-gateway
-    image: gjovanov/janus-full
-    network_mode: "host"
-    restart: on-failure
+    image: gjovanov/janus-docker
+    restart: "on-failure"
     ports:
       - "80:80"
       - "443:443"
+      - "7777:7777"
       - "7088:7088"
+      - "7889:7889"
+      - "7188:7188"
+      - "7988:7988"
       - "8088:8088"
-      - "8188:8188"
       - "8089:8089"
+      - "8188:8188"
+      - "8189:8189"
       - "10000-10200:10000-10200/udp"
     environment:
       - DOCKER_IP
