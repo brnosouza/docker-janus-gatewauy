@@ -21,6 +21,8 @@ services:
     volumes:
       - ./conf/:/opt/janus/etc/janus/
       - ./data/certbot/conf:/etc/letsencrypt
+    environment:
+      - DOCKER_IP
   nginx:
     image: nginx:alpine
     restart: always

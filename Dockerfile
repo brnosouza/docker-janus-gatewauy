@@ -86,4 +86,4 @@ COPY conf/*.cfg /opt/janus/etc/janus/
 EXPOSE 7088 8088 8188 8089
 EXPOSE 10000-10200/udp
 
-CMD /opt/janus/bin/janus --stun-server=stun.l.google.com:19302
+CMD /opt/janus/bin/janus --stun-server=stun.l.google.com:19302 --nat-1-1=${DOCKER_IP}
