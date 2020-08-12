@@ -238,8 +238,8 @@ nat: {
 	stun_port = 19302
 	nice_debug = false
 	#full_trickle = true
-	ice_lite = true
-	ice_tcp = true
+	#ice_lite = true
+	#ice_tcp = true
 
 	# By default Janus tries to resolve mDNS (.local) candidates: even
 	# though this is now done asynchronously and shouldn't keep the API

@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: brnsouza/janus-gateway
+    network_mode: "host"
     restart: always
     ports:
       # TODO: MAP PORTS

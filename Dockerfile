@@ -30,13 +30,12 @@ RUN apt-get update -y \
           sudo \
           make \
           git \
-          graphviz \
           cmake
 
 RUN cd ~ \
     && git clone https://github.com/cisco/libsrtp.git \
     && cd libsrtp \
-    && git checkout v2.3.0 \
+    && git checkout v2.2.0 \
     && ./configure --prefix=/usr --enable-openssl \
     && make shared_library \
     && sudo make install
@@ -59,23 +58,11 @@ RUN cd ~ \
     && make \
     && sudo make install
 
-RUN apt-get install flex bison -y \
-    && cd ~ \
-    && git clone https://github.com/doxygen/doxygen.git \
-    && cd doxygen \
-    && git checkout Release_1_8_11 \
-    && mkdir build \
-    && cd build \
-    && cmake -G "Unix Makefiles" .. \
-    && make \
-    && make install \
-    && ls
-
 RUN cd ~ \
     && git clone https://github.com/meetecho/janus-gateway.git \
     && cd janus-gateway \
     && sh autogen.sh \
-    && ./configure --prefix=/opt/janus --disable-rabbitmq --disable-mqtt --enable-docs \
+    && ./configure --prefix=/opt/janus --disable-rabbitmq --disable-mqtt --disable-docs \
     && make CFLAGS='-std=c99' \
     && make install \
     && make configs
@@ -83,7 +70,7 @@ RUN cd ~ \
 COPY ./certs /opt/janus/share/janus
 COPY conf/*.jcfg /opt/janus/etc/janus/
 
-EXPOSE 7088 8088 8188 8089
+EXPOSE 7088 7188 7889 7989 8088 8089 8188 8989
 EXPOSE 10000-10200/udp
 
 CMD /opt/janus/bin/janus --stun-server=stun.l.google.com:19302 --nat-1-1=${DOCKER_IP}
