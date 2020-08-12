@@ -24,10 +24,9 @@ services:
     environment:
       - DOCKER_IP
     volumes:
-      - ./data/certbot/conf/live/janus.procondutor.com.br/fullchain.pem:/usr/local/nginx/server.crt \
-      - ./data/certbot/conf/live/janus.procondutor.com.br/privkey.pem:/usr/local/nginx/server.key \
-      - ./log_janus:/app/log \
       - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/conf/live/janus.procondutor.com.br/fullchain.pem:/root/janus/certs/mycert.pem
+      - ./data/certbot/conf/live/janus.procondutor.com.br/privkey.pem:/root/janus/certs/mycert.key
   nginx:
     image: nginx:alpine
     restart: always
