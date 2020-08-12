@@ -49,9 +49,9 @@ var server = null;
 // 	server = "https://" + window.location.hostname + ":8089/janus";
 //
 if(window.location.protocol === 'http:')
-	server = "http://" + window.location.hostname + "/janus";
+	server = "http://" + window.location.hostname + "/janus_http";
 else
-	server = "https://" + window.location.hostname + "/janus";
+	server = "https://" + window.location.hostname + "/janus_http";
 
 
 var janus = null;
