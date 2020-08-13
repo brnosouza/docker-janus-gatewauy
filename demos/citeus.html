@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Janus WebRTC Server: Cite us!</title>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script>
-	$(function() {
-		$(".navbar-static-top").load("navbar.html", function() {
-			$(".navbar-static-top a[href='citeus.html']").parent().addClass("active");
-		});
-		$(".footer").load("footer.html");
-	});
-</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" type="text/css"/>
-<link rel="stylesheet" href="css/demo.css" type="text/css"/>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Janus WebRTC Server: Cite us!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"
+            type="text/javascript"></script>
+    <script>
+        $(function () {
+            $(".navbar-static-top").load("navbar.html", function () {
+                $(".navbar-static-top a[href='citeus.html']").parent().addClass("active");
+            });
+            $(".footer").load("footer.html");
+        });
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="css/demo.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-<a href="https://github.com/meetecho/janus-gateway"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1001;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/meetecho/janus-gateway"><img
+        alt="Fork me on GitHub"
+        src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" style="position: absolute; top: 0; left: 0; border: 0; z-index: 1001;"></a>
 
 <nav class="navbar navbar-default navbar-static-top">
 </nav>
 
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1>Cite us!</h1>
-			</div>
-			<div>
-				<ul>
-					<li><a href="#janus">IPTComm 2014: "Janus: a general purpose WebRTC gateway"</a></li>
-					<li><a href="#awes">AWeS 2015: "Performance analysis of the Janus WebRTC gateway"</a></li>
-					<li><a href="#jattack">IPTComm 2016: "Jattack: a WebRTC load testing tool"</a></li>
-					<li><a href="#ietf">IEEE Communications Standards Magazine: "Empowering Remote Participation in IETF Meetings through WebRTC"</a></li>
-					<li><a href="#iceland">IPTComm 2018: "Measuring Janus temperature in ICE-land"</a></li>
-					<li><a href="#docker">IEEE Internet Computing: "Docker and Janus: friends or foe?"</a></li>
-				</ul>
-			</div>
-			<hr id="janus"/>
-			<h4><a href="http://dl.acm.org/citation.cfm?id=2670389">IPTComm 2014: "Janus: a general purpose WebRTC gateway"</a></h4>
-			<pre>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Cite us!</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#janus">IPTComm 2014: "Janus: a general purpose WebRTC gateway"</a></li>
+                    <li><a href="#awes">AWeS 2015: "Performance analysis of the Janus WebRTC gateway"</a></li>
+                    <li><a href="#jattack">IPTComm 2016: "Jattack: a WebRTC load testing tool"</a></li>
+                    <li><a href="#ietf">IEEE Communications Standards Magazine: "Empowering Remote Participation in IETF
+                        Meetings through WebRTC"</a></li>
+                    <li><a href="#iceland">IPTComm 2018: "Measuring Janus temperature in ICE-land"</a></li>
+                    <li><a href="#docker">IEEE Internet Computing: "Docker and Janus: friends or foe?"</a></li>
+                </ul>
+            </div>
+            <hr id="janus"/>
+            <h4><a href="http://dl.acm.org/citation.cfm?id=2670389">IPTComm 2014: "Janus: a general purpose WebRTC
+                gateway"</a></h4>
+            <pre>
 @inproceedings{IPTComm2014-Janus,
 	author = {Amirante, A. and Castaldi, T. and Miniero, L. and Romano, S. P.},
 	title = {Janus: A General Purpose WebRTC Gateway},
@@ -63,9 +69,10 @@
 	keywords = {IETF, JavaScript, Rtcweb, WebRTC, conferencing, gateways, streaming, web communication},
 }
 			</pre>
-			<hr id="awes"/>
-			<h4><a href="https://dl.acm.org/citation.cfm?doid=2749215.2749223">AWeS 2015: "Performance analysis of the Janus WebRTC gateway"</a></h4>
-			<pre>
+            <hr id="awes"/>
+            <h4><a href="https://dl.acm.org/citation.cfm?doid=2749215.2749223">AWeS 2015: "Performance analysis of the
+                Janus WebRTC gateway"</a></h4>
+            <pre>
 @inproceedings{AWeS2015-Janus,
 	author = {Amirante, Alessandro and Castaldi, Tobia and Miniero, Lorenzo and Romano, Simon Pietro},
 	title = {Performance Analysis of the Janus WebRTC Gateway},
@@ -85,9 +92,10 @@
 	keywords = {MCU, RTCWEB, SFU, SIP, WebRTC, gateway, performance},
 }
 			</pre>
-			<hr id="jattack"/>
-			<h4><a href="https://ieeexplore.ieee.org/document/7780247/">IPTComm 2016: "Jattack: a WebRTC load testing tool"</a></h4>
-			<pre>
+            <hr id="jattack"/>
+            <h4><a href="https://ieeexplore.ieee.org/document/7780247/">IPTComm 2016: "Jattack: a WebRTC load testing
+                tool"</a></h4>
+            <pre>
 @inproceedings{IPTComm2016-Jattack,
 	author = {Amirante, A. and Castaldi, T. and Miniero, L. and Romano, S. P.},
 	title = {Jattack: a WebRTC load testing tool},
@@ -102,9 +110,10 @@
 	keywords = {WebRTC, Testing, Media, Scalability, Browsers, Servers, Stress},
 }
 			</pre>
-			<hr id="ietf"/>
-			<h4><a href="https://ieeexplore.ieee.org/document/7992930/">IEEE Communications Standards Magazine: "Empowering Remote Participation in IETF Meetings through WebRTC"</a></h4>
-			<pre>
+            <hr id="ietf"/>
+            <h4><a href="https://ieeexplore.ieee.org/document/7992930/">IEEE Communications Standards Magazine:
+                "Empowering Remote Participation in IETF Meetings through WebRTC"</a></h4>
+            <pre>
 @article{DBLP:journals/csm/AmiranteCMS17,
 	author = {Amirante, A. and Castaldi, T. and Miniero, L. and Saviano, P.},
 	title = {Empowering Remote Participation in {IETF} Meetings through WebRTC},
@@ -120,9 +129,10 @@
 	bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 			</pre>
-			<hr id="iceland"/>
-			<h4><a href="https://ieeexplore.ieee.org/document/8567641/">IPTComm 2018: "Measuring Janus temperature in ICE-land"</a></h4>
-			<pre>
+            <hr id="iceland"/>
+            <h4><a href="https://ieeexplore.ieee.org/document/8567641/">IPTComm 2018: "Measuring Janus temperature in
+                ICE-land"</a></h4>
+            <pre>
 @inproceedings{IPTComm2018-libnice,
 	author = {Amirante, A. and Castaldi, T. and Miniero, L. and Romano, S. P. and Toppi, A.},
 	year = {2018},
@@ -131,10 +141,11 @@
 	title = {Measuring Janus temperature in ICE-land},
 	doi = {10.1109/IPTCOMM.2018.8567641}
 }			</pre>
-			</pre>
-			<hr id="docker"/>
-			<h4><a href="https://ieeexplore.ieee.org/abstract/document/8894526">IEEE Internet Computing: "Container NATs and Session-Oriented Standards: Friends or Foe?"</a></h4>
-			<pre>
+            </pre>
+            <hr id="docker"/>
+            <h4><a href="https://ieeexplore.ieee.org/abstract/document/8894526">IEEE Internet Computing: "Container NATs
+                and Session-Oriented Standards: Friends or Foe?"</a></h4>
+            <pre>
 @ARTICLE{8894526,
   author={A. {Amirante} and S. P. {Romano}},
   journal={IEEE Internet Computing},
@@ -144,12 +155,12 @@
   number={6},
   pages={28-37}
 }
-		</div>
-	</div>
+        </div>
+    </div>
 
-	<hr>
-	<div class="footer">
-	</div>
+    <hr>
+    <div class="footer">
+    </div>
 </div>
 </body>
 </html>
